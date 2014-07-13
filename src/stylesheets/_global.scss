@@ -1,0 +1,63 @@
+/* Global
+==================================== */
+
+body {
+    font-family: $sans;
+    color: $grey--1;
+}
+
+h1, h2, h3 {
+    font-family: $condensed;
+    font-weight: bold;
+    color: $black;
+}
+
+.columns {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    *zoom: 1; 
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+[class*="col-"] {
+    width: 100%;
+    float: left;
+    &:last-child {
+        float: right;
+    }
+}
+
+.col-300 {
+    max-width: 300px;
+}
+
+.col-600 {
+    max-width: 600px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
