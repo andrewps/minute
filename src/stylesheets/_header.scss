@@ -2,10 +2,56 @@
 ==================================== */
 
 header {
+    position: relative;
     background: $lemon;
     color: $black;
+    height: 60px;
     margin-bottom: 40px;
     h1 {
         margin: 0px;
+        line-height: 60px;
+    }
+}
+
+.navigate-stories {
+    .prev, .next {
+        position: absolute;
+        top: 10px;
+        z-index: 9999;
+        display: block;
+        line-height: normal;
+        .ss-icon {
+            font-size: 24px;
+        }
+        .ss-icon, strong {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            color: rgba($black, 0.5);
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+    .prev {
+        left: 10px;
+        strong {
+            border-left: 1px solid;
+            margin-left: 10px;
+            padding-left: 10px;
+        }
+    }
+    .next {
+        right: 10px;
+        strong {
+            border-right: 1px solid;
+            margin-right: 10px;
+            padding-right: 10px;
+        }
     }
 }

@@ -60,3 +60,19 @@ h2.headline {
         }
     }
 }
+
+.post-meta {
+    border: 1px solid $black;
+    width: 100%;
+    padding: 10px;
+    h4 {
+        font-weight: bold;
+        font-size: 34px;
+        margin: 0;
+    }
+    .origin {
+        margin: 10px 0 20px;
+        font-size: 18px;
+        line-height: 32px;
+    }
+}

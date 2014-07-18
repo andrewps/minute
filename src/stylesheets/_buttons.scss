@@ -1,0 +1,52 @@
+/* Buttons
+==================================== */
+
+a.button,
+button.button {
+    font-family: $sans;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    width: auto;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    @include radius(5px);
+    @include box-shadow(rgba(0, 0, 0, 0.25) 0 2px 3px 0px, inset rgba(0, 0, 0, 0.1) 0px 0px 0px 2px);
+    &:hover {
+
+    }
+    &:active {
+        top: 1px;
+        @include box-shadow(inset rgba(0, 0, 0, 0.25) 0px 2px 2px 0px);
+    }
+    &.button-blue { 
+        background-color: $teal;
+        color: $white;
+        &:hover {
+            background-color: lighten($teal, 2%);
+        }
+        &:active {
+            background-color: darken($teal, 2%);
+        }
+    }
+    &.button-icon {
+        label, .ss-icon {
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .ss-icon {
+            margin-left: 10px;
+            font-size: 80%
+        }
+    }
+    &.button-fluid {
+        width: 100%;
+        padding: 0;
+    }
+}

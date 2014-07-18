@@ -54,26 +54,7 @@
 /* This triggers a redraw in IE to Fix IE8's :before content rendering. */
 html:hover [class^="ss-"]{-ms-zoom: 1;}
 
-.ss-icon, .ss-icon.ss-social,
-[class^="ss-"]:before, [class*=" ss-"]:before,
-[class^="ss-"][class*=" ss-social"]:before, [class*=" ss-"][class*=" ss-social"]:before,
-[class^="ss-"].right:after, [class*=" ss-"].right:after,
-[class^="ss-"][class*=" ss-social"].right:after, [class*=" ss-"][class*=" ss-social"].right:after{
-  font-family: "SSSocial";
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: none;
-  text-rendering: optimizeLegibility;
-  white-space: nowrap;
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  -o-font-feature-settings: "liga";
-  font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-}
-
-/*.ss-icon, .ss-icon.ss-standard,
+.ss-icon, .ss-icon.ss-standard,
 [class^="ss-"]:before, [class*=" ss-"]:before,
 [class^="ss-"].ss-standard:before, [class*=" ss-"].ss-standard:before,
 [class^="ss-"].right:after, [class*=" ss-"].right:after,
@@ -90,7 +71,27 @@ html:hover [class^="ss-"]{-ms-zoom: 1;}
   -o-font-feature-settings: "liga";
   font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
-}*/
+}
+
+.ss-icon, .ss-icon.ss-social, 
+[class*="ss-social"]:before, 
+[class*="ss-social"]:before, 
+[class*="ss-social"].right:after, 
+[class*="ss-social"].right:after{
+  font-family: "SSSocial";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
 
 [class^="ss-"].right:before,
 [class*=" ss-"].right:before{display:none;content:'';}
