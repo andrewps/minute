@@ -26,6 +26,17 @@ h2.headline {
     }
 }
 
+.fin {
+    display: block;
+    margin: 40px auto;
+    background-image: url("/images/fin@2x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 200px;
+    height: 54px;
+    @include bg-size(50%);
+}
+
 .shareability {
     width: 100%;
     display: table;
@@ -75,4 +86,9 @@ h2.headline {
         font-size: 18px;
         line-height: 32px;
     }
+}
+
+.recirc {
+    background: $black;
+    margin-top: 60px;
 }
