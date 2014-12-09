@@ -121,7 +121,7 @@ $googleplus:                #DD4B39;
 /* Transforms
 */
 @mixin transform-single($property, $value) {
-  transform: #{$property}unquote('('#{$value}')');
+  transform: #{$property}((#{$value}));
 }
 @mixin rotate($deg) {
   @include transform-single(rotate, $deg);
@@ -208,8 +208,8 @@ $googleplus:                #DD4B39;
 
 @mixin animation($str) {
   -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};      
+     -moz-animation: #{$str};
+      -ms-animation: #{$str};
+       -o-animation: #{$str};
+          animation: #{$str};      
 }

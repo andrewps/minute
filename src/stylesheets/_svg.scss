@@ -1,6 +1,5 @@
 /* SVG
 ==================================== */
-
 .play-video {
 	@include svg-bg('play-video', $repeat: no-repeat);
 	width: 60px;
@@ -8,13 +7,17 @@
 }
 
 .video-button {
-	img {
-		width: 400px;
-		height: 400px;
-		background-color: $black;
+	svg, path {
+		@include transition(all .1s linear);
 		fill: $teal;
 	}
-	path {
-		fill: $teal;
+	&:hover {
+		cursor: pointer;
+		svg {
+			@include scale(1.1);
+			path {
+				fill: $black;
+			}
+		}
 	}
 }
