@@ -4,6 +4,7 @@
 body {
     font-family: $sans;
     color: $grey--1;
+    background-color: random-color(50,150,0.75);
 }
 
 h1, h2, h3 {
@@ -20,15 +21,7 @@ a {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
-    *zoom: 1; 
-    &:before,
-    &:after {
-        content: " ";
-        display: table;
-    }
-    &:after {
-        clear: both;
-    }
+     @extend %clearfix;
 }
 
 [class*="col-"] {

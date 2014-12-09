@@ -1,15 +1,15 @@
 /* Mixins
 ==================================== */
 
-$sans: "Cooper Hewitt", Helvetica, Arial, sans-serif;
-$condensed: "Antonio";
-$titles: "Cambo", serif;
+$sans: Helvetica, Arial, sans-serif;
+$condensed: sans-serif;
+$titles: serif;
 $mono: "Source Code Pro", Courier;
 
 $lemon:                     #E0F635;
 $black:                     #27282D;
 $white:                     #FFFFFF;
-$teal:                      #21ADC2;
+$teal:                      #78F8DE;
 $pink:                      #EF5C9E;
 $grey--1:                   #484D4B;
 
@@ -63,4 +63,10 @@ $googleplus:                #DD4B39;
         -ms-transition: $transition-property $transition-time $method;
          -o-transition: $transition-property $transition-time $method;
             transition: $transition-property $transition-time $method;
+}
+
+@mixin svg-bg($name, $extension: png, $color: transparent, $position: 50% 50%, $repeat: no-repeat) {
+  background: url(../images/svg/#{$name}.#{$extension}) $color $position $repeat;
+  background: none, url(../images/svg/#{$name}.svg) $color $position $repeat;
+  @include bg-size(cover);
 }
