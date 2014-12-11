@@ -1,13 +1,9 @@
 .tt {
   cursor: help;
-  
-  /*margin: 100px 75px 10px 75px;
-  padding: 15px 20px;*/
   position: relative;
   text-align: center;
-  /*width: 200px;*/
-  -webkit-transform: translateZ(0); /* webkit flicker fix */
-  -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
 
 .tt .tooltip {
@@ -16,16 +12,17 @@
   display: block;
   bottom: 100%;
   left: 0;
-  margin-bottom: 20px;
-  margin-left: -10px;
+  margin-bottom: 15px;
+  margin-left: -28px;
   padding: 10px;
   opacity: 0;
-  font-size: 14px;
+  text-align: center;
+  font-size: 12px;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 15px;
   pointer-events: none;
   position: absolute;
-  width: 100%;
+  width: 60px;
   -webkit-transform: translateY(10px);
      -moz-transform: translateY(10px);
       -ms-transform: translateY(10px);
@@ -38,7 +35,6 @@
           transition: all .25s ease-out;
 }
 
-/* This bridges the gap so you can mouse into the tooltip without it disappearing */
 .tt .tooltip:before {
   bottom: -20px;
   content: " ";
@@ -49,7 +45,6 @@
   width: 100%;
 }  
 
-/* CSS Triangles - see Trevor's post */
 .tt .tooltip:after {
   border-left: solid transparent 10px;
   border-right: solid transparent 10px;
@@ -73,7 +68,6 @@
           transform: translateY(0px);
 }
 
-/* IE can just show/hide with no transition */
 .lte8 .tt .tooltip {
   display: none;
 }
