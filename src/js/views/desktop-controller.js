@@ -21,10 +21,15 @@ function DesktopViewController($el) {
         // someVar: something
     }));
 
-
-    // maybe you want to instantiate a vizualization:
-    //
-    // new Viz(this.$el.find('.viz-selector'));
+    // Opens Hamburgler Menu
+    $(".icon").click(function () {
+        $(".mobilenav").fadeToggle(250);
+        $(".mobilenav li").toggleClass('slideInLeft');
+        // Need slideOutLeft for closing menu
+        $(".top-menu").toggleClass("top-animate");
+        $(".mid-menu").toggleClass("mid-animate");
+        $(".bottom-menu").toggleClass("bottom-animate");
+    });
 }
 
 

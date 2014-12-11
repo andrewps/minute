@@ -3,18 +3,19 @@
 
 /* Typography
 */
-$sans: Helvetica, Arial, sans-serif;
-$condensed: sans-serif;
-$titles: serif;
-$mono: "Source Code Pro", Courier;
+$sans: 'Apercu', Helvetica, Arial, sans-serif;
+$condensed: 'Apercu', Helvetica, Arial, sans-serif;
+$titles: 'Apercu', Helvetica, Arial, sans-serif;
+$mono: "Apercu Mono", Courier;
 
 /* Colors
 */
-$lemon:                     #E0F635;
-$black:                     #27282D;
+$purple:                    #5E66A9;
+$yellow:                    #FFF961;
+$black:                     #2C2C2C;
 $white:                     #FFFFFF;
-$teal:                      #78F8DE;
-$pink:                      #EF5C9E;
+$cyan:                      #78F8DE;
+$pink:                      #F7D3F4;
 $grey--1:                   #484D4B;
 
 /* Social
@@ -25,6 +26,8 @@ $tumblr:                    #35465C;
 $reddit:                    #5F99CF;
 $digg:                      #000000;
 $googleplus:                #DD4B39;
+$whatsapp:                  #34AF23;
+$pinterest:                 #CC2127;
 
 
 /* Clearfix
@@ -120,70 +123,31 @@ $googleplus:                #DD4B39;
 
 /* Transforms
 */
-@mixin transform-single($property, $value) {
-  transform: #{$property}((#{$value}));
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+     -moz-transform: $transforms;
+      -ms-transform: $transforms;
+       -o-transform: $transforms;
+          transform: $transforms;
 }
-@mixin rotate($deg) {
-  @include transform-single(rotate, $deg);
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
 }
-@mixin rotateX($deg) {
-  @include transform-single(rotateX, $deg);
+@mixin scale($scale) {
+   @include transform(scale($scale));
 }
-@mixin rotateY($deg) {
-  @include transform-single(rotateY, $deg);
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
 }
-@mixin rotateZ($deg) {
-  @include transform-single(rotateZ, $deg);
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
 }
-@mixin rotate3d($x, $y, $z, $deg) {
-  $multi-var: $x, $y, $z, $deg;
-  @include transform-single(rotate3d, $multi-var);
-}
-@mixin scale($ratio) {
-  @include transform-single(scale, $ratio);
-}
-@mixin scaleX($ratio) {
-  @include transform-single(scaleX, $ratio);
-}
-@mixin scaleY($ratio) {
-  @include transform-single(scaleY, $ratio);
-}
-@mixin scaleZ($ratio) {
-  @include transform-single(scaleZ, $ratio);
-}
-@mixin scale3d($x, $y, $z) {
-  $multi-var: $x, $y, $z;
-  @include transform-single(scale3d, $multi-var);
-}
-@mixin skew($x, $y) {
-  $multi-var: $x, $y;
-  @include transform-single(skew, $multi-var);
-  backface-visibility: hidden;
-}
-@mixin skewX($deg) {
-  @include transform-single(skewX, $deg);
-  backface-visibility: hidden;
-}
-@mixin skewY($deg) {
-  @include transform-single(skewY, $deg);
-  backface-visibility: hidden;
-}
-@mixin translate($x, $y) {
-  $multi-var: $x, $y;
-  @include transform-single(translate, $multi-var);
-}
-@mixin translateX($x) {
-  @include transform-single(translateX, $x);
-}
-@mixin translateY($y) {
-  @include transform-single(translateY, $y);
-}
-@mixin translateZ($z) {
-  @include transform-single(translateZ, $z);
-}
-@mixin translate3d($x, $y, $z) {
-  $multi-var: $x, $y, $z;
-  @include transform-single(translate3d, $multi-var);
+@mixin transform-origin ($origin) {
+  -webkit-transform-origin: $origin;
+      moz-transform-origin: $origin;
+      -ms-transform-origin: $origin;
+       -o-transform-origin: $origin;
+          transform-origin: $origin;
 }
 
 /* Animations

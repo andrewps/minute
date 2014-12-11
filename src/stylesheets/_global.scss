@@ -1,10 +1,16 @@
 /* Global
 ==================================== */
 
+* {   
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
 body {
     font-family: $sans;
-    color: $grey--1;
+    color: $black;
     background-color: random-color(50,150,0.75);
+    margin-top: 160px;
 }
 
 h1, h2, h3 {
@@ -15,11 +21,16 @@ h1, h2, h3 {
 
 a {
     cursor: pointer;
+    color: $purple;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .columns {
     width: 100%;
-    max-width: 960px;
+    max-width: 980px;
     margin: 0 auto;
      @extend %clearfix;
 }
@@ -33,12 +44,20 @@ a {
     }
 }
 
+.col-280 {
+    max-width: 280px;
+}
+
 .col-300 {
     max-width: 300px;
 }
 
 .col-600 {
     max-width: 600px;
+}
+
+.col-640 {
+    max-width: 640px;
 }
 
 .col-3 {
@@ -49,21 +68,13 @@ a {
     }
 }
 
+.content {
+    position: relative;
+    z-index: 1;
+    background: $white;
+    padding: 40px 0;
+}
+
 .text-center {
     text-align: center;
-}
-
-
-.cf:before,
-.cf:after {
-    content: " ";
-    display: table;
-}
-
-.cf:after {
-    clear: both;
-}
-
-.cf {
-    *zoom: 1;
 }

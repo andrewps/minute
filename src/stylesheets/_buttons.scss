@@ -15,23 +15,47 @@ button.button {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    @include radius(5px);
-    @include box-shadow(rgba(0, 0, 0, 0.25) 0 2px 3px 0px, inset rgba(0, 0, 0, 0.1) 0px 0px 0px 2px);
+    @include transition(all .1s linear);
     &:hover {
-
+        @include scale(1.1);
     }
     &:active {
-        top: 1px;
-        @include box-shadow(inset rgba(0, 0, 0, 0.25) 0px 2px 2px 0px);
+        @include scale(1);
     }
-    &.button-blue { 
-        background-color: $teal;
-        color: $white;
-        &:hover {
-            background-color: lighten($teal, 2%);
+    &.button-yellow { 
+        background-color: $yellow;
+        color: $black;
+        &:hover {            
         }
         &:active {
-            background-color: darken($teal, 2%);
+            background-color: darken($yellow, 5%);
+        }
+    }
+    &.button-cyan { 
+        background-color: $cyan;
+        color: $black;
+        &:hover {            
+        }
+        &:active {
+            background-color: darken($cyan, 5%);
+        }
+    }
+    &.button-purple { 
+        background-color: $purple;
+        color: $white;
+        &:hover {            
+        }
+        &:active {
+            background-color: darken($purple, 5%);
+        }
+    }
+    &.button-pink { 
+        background-color: $pink;
+        color: $black;
+        &:hover {            
+        }
+        &:active {
+            background-color: darken($pink, 5%);
         }
     }
     &.button-icon {
@@ -48,5 +72,11 @@ button.button {
     &.button-fluid {
         width: 100%;
         padding: 0;
+    }
+    &.button-tiny {
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+        padding: 0 15px; 
     }
 }

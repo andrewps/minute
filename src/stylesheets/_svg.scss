@@ -8,8 +8,8 @@
 
 .video-button {
 	svg, path {
-		@include transition(all .1s linear);
-		fill: $teal;
+		@include transition(all .15s linear);
+		fill: $cyan;
 	}
 	&:hover {
 		cursor: pointer;

@@ -6,21 +6,22 @@ article {
 }
 
 .meta {
+    font-size: 18px;
+    font-weight: bold;
     font-family: $mono;
-    small {
-        color: $teal;
-    }
 }
 h2.headline {
     font-family: $titles;
     font-size: 50px;
     line-height: 60px;
-    font-weight: 100;
+    font-weight: bold;
+    letter-spacing: -.025em;
+    margin: 10px 0 40px 0;
 }
 
 .post-text {
     p {
-        font-weight: 300;
+        font-weight: normal;
         font-size: 20px;
         line-height: 34px;
     }
@@ -37,58 +38,8 @@ h2.headline {
     @include bg-size(50%);
 }
 
-.shareability {
-    width: 100%;
-    display: table;
-    span {
-        display: table-cell;
-        .network {
-            text-align: center;
-            color: $white;
-            cursor: pointer;
-            font-size: 24px;
-            line-height: 64px;
-            height: 60px;
-            &.facebook {
-                background-color: $facebook;
-            }
-            &.twitter {
-                background-color: $twitter;
-            }
-            &.tumblr {
-                background-color: $tumblr;
-            }
-            &.reddit {
-                background-color: $reddit;
-            }
-            &.digg {
-                background-color: $digg;
-            }
-            &.googleplus {
-                background-color: $googleplus;
-            }
-            
-        }
-    }
-}
-
-.post-meta {
-    border: 1px solid $black;
-    width: 100%;
-    padding: 10px;
-    h4 {
-        font-weight: bold;
-        font-size: 34px;
-        margin: 0;
-    }
-    .origin {
-        margin: 10px 0 20px;
-        font-size: 18px;
-        line-height: 32px;
-    }
-}
-
 .recirc {
-    background: $black;
+    background: $cyan;
+    padding: 100px 0; 
     margin-top: 60px;
 }

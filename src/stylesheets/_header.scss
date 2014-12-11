@@ -2,58 +2,39 @@
 ==================================== */
 
 header {
-    position: relative;
-    // background: $black;
-    color: $black;
-    // height: 60px;
-    // margin-bottom: 40px;
-    margin: 40px;
-    h1 {
-        margin: 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    height: 160px;
+    background: $purple;
+    text-align: center;
+    h1.logo {
+        text-align: center;
+        margin: 20px 0 0;
         line-height: 60px;
-    }
-}
-
-.navigate-stories {
-    .prev, .next {
-        // @include position(absolute, 10px);
-        position: absolute;
-        top: 10px;
-        z-index: 9999;
-        display: block;
-        line-height: normal;
-        .ss-icon {
-            font-size: 24px;
-        }
-        .ss-icon, strong {
-            display: inline-block;
-            vertical-align: middle;
-            font-size: 16px;
-            font-weight: bold;
-        }
+        @include transition(all .15s linear);
         a {
-            display: block;
-            text-decoration: none;
-            color: rgba($black, 0.5);
+            font-size: 44px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $cyan;
             &:hover {
-                color: $black;
+                text-decoration: none;
             }
         }
     }
-    .prev {
-        left: 10px;
-        strong {
-            border-left: 1px solid;
-            margin-left: 10px;
-            padding-left: 10px;
-        }
+    .tagline {
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 20px;
+        color: $white;
     }
-    .next {
-        right: 10px;
-        strong {
-            border-right: 1px solid;
-            margin-right: 10px;
-            padding-right: 10px;
-        }
+    .button {
+        display: inline-block;
     }
+}
+
+.logo-fade {
+    @include scale(.5);
 }
