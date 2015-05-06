@@ -1,1 +1,21 @@
 //- Frontpage template here
+
+h1
+	| frontpage
+
+
+ul
+	for article in fakeArticleList
+		li
+			ul
+				li
+					a(href="/articles")
+						| #{article.title}
+
+				li
+					| #{article.text}
+				li
+					| #{article.url}
+				if article.top_image
+					li
+						| #{article.top_image}

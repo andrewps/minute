@@ -8,37 +8,15 @@
 //
 
 
-var DesktopViewController = require('./views/desktop-controller');
-var MobileViewController = require('./views/mobile-controller');
-var emitter = require('./emitter');
-// var _ = require('lodash');
 
-var desktopView = null;
-var mobileView = null;
-var MOBILE_BREAKPOINT = 760;
-
-var $desktopEl = $('#desktopContent');
-var $mobileEl = $('#mobileContent');
-
-
-var draw = function() {
-    emitter.removeAllListeners();
-
-    if(desktopView) {
-        desktopView.destroy();
-    }
-    if(mobileView) {
-        mobileView.destroy();
-    }
-
-    if($(window).width() > MOBILE_BREAKPOINT) {
-        desktopView = new DesktopViewController($desktopEl);
-    } else {
-        mobileView = new MobileViewController($mobileView);
-    }
-};
-
-window.onresize = draw;
-draw();
+// Opens Hamburgler Menu
+$(".icon").click(function () {
+    $(".mobilenav").fadeToggle(250);
+    $(".mobilenav li").toggleClass('slideInLeft');
+    // Need slideOutLeft for closing menu
+    $(".top-menu").toggleClass("top-animate");
+    $(".mid-menu").toggleClass("mid-animate");
+    $(".bottom-menu").toggleClass("bottom-animate");
+});
 
 
