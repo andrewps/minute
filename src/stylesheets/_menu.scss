@@ -42,9 +42,9 @@
     position: absolute;
 }
 .icon {
+    color: $cyan;
     z-index: 9999;
     position: fixed;
-/*    background: rgba($purple, 0.99);*/
     display: block;
     padding: 0;
     height: 40px;

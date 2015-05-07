@@ -11,7 +11,7 @@ article {
     font-family: $mono;
 }
 h2.headline {
-    font-family: $titles;
+    font-family: $serif;
     font-size: 50px;
     line-height: 60px;
     font-weight: bold;
@@ -42,4 +42,8 @@ h2.headline {
     background: $cyan;
     padding: 100px 0; 
     margin-top: 60px;
+}
+
+img {
+    max-width: 100%;
 }
