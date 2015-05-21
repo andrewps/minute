@@ -6,32 +6,60 @@ header {
     top: 0;
     width: 100%;
     z-index: 1;
-    height: 160px;
+    height: 50px;
     background: $purple;
-    text-align: center;
-    h1.logo {
-        text-align: center;
-        margin: 20px 0 0;
-        line-height: 60px;
-        @include transition(all .15s linear);
+    // text-align: center;
+    .logo {
+        float: left;
         a {
-            font-size: 44px;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: $cyan;
+            display: block;
+            text-indent: -9999px;
+            margin: 0;
+            padding: 0;
+            line-height: 60px;
+            width: 120px;
+            height: 50px;
+            background-image: url('/images/theminute.png');
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            @include bg-size(100%);
+            @include transition(all .15s linear);
             &:hover {
                 text-decoration: none;
             }
         }
     }
+    .nydc {
+        float: left;
+        color: $yellow;
+        height: 50px;
+        line-height: 46px;
+        margin-left: 20px;
+        display: inline-block;
+        small, a {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        a {
+            margin: 0 5px;
+            width: 40px;
+            height: 40px;
+            img {
+                width: 100%;
+            }
+        }
+    }
     .tagline {
+        float: right;
         font-weight: bold;
         display: inline-block;
-        margin-right: 20px;
+        height: 50px;
+        line-height: 46px;
         color: $white;
-    }
-    .button {
-        display: inline-block;
+        .button {
+            margin-left: 20px;
+            display: inline-block;
+        }
     }
 }
 

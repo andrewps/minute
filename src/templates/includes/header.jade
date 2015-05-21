@@ -4,23 +4,29 @@
 //-         .menui.mid-menu
 //-         .menui.bottom-menu
 
-.mobilenav
-    li
-        a(href='#') Home
-    li
-        a(href='#') Browse Stuff
-    li
-        a(href='#') Newest Stories
-    li
-        a(href='#') My Profile
-    li
-        a(href='#') Follow Us
+//- .mobilenav
+//-     li
+//-         a(href='#') Home
+//-     li
+//-         a(href='#') Browse Stuff
+//-     li
+//-         a(href='#') Newest Stories
+//-     li
+//-         a(href='#') My Profile
+//-     li
+//-         a(href='#') Follow Us
 
 header
-    h1.logo 
-        a(href="/") The Minute
-        small a project by 
-        a(href="http://www.nydata.co") New York Data Co.
-    
-    .tagline The Best International News Translated Into English Daily
-        a(href="#").button.button-pink.button-tiny Learn More
+    .columns
+        .col-10
+            .logo
+                a(href="/") The Minute
+            .nydc
+                small a
+                a(href="http://www.nydata.co")
+                    img(src="/images/nydc.png")
+                small production
+            
+            .tagline 
+                small The Best International News Translated Into English Daily
+                a(href="/about").button.button-pink.button-tiny Learn More
