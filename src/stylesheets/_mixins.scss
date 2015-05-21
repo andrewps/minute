@@ -1,16 +1,14 @@
 /* Mixins
 ==================================== */
 
-/* Typography
-*/
+/* Typography */
 $sans: 'Apercu', Helvetica, Arial, sans-serif;
 $serif: 'Playfair Display', serif;
 $condensed: 'Apercu', Helvetica, Arial, sans-serif;
 $titles: 'Apercu', Helvetica, Arial, sans-serif;
 $mono: "Apercu Mono", Courier;
 
-/* Colors
-*/
+/* Colors */
 $purple:                    #5E66A9;
 $yellow:                    #FFF961;
 $black:                     #2C2C2C;
@@ -19,8 +17,7 @@ $cyan:                      #78F8DE;
 $pink:                      #F7D3F4;
 $grey--1:                   #484D4B;
 
-/* Social
-*/
+/* Social */
 $facebook:                  #3B5998;
 $twitter:                   #55ACEE;
 $tumblr:                    #35465C;
@@ -31,8 +28,7 @@ $whatsapp:                  #34AF23;
 $pinterest:                 #CC2127;
 
 
-/* Clearfix
-*/
+/* Clearfix */
 %clearfix {
   *zoom: 1;
   &:before,
@@ -47,8 +43,7 @@ $pinterest:                 #CC2127;
 }
 
 
-/* Radius
-*/
+/* Radius */
 @mixin radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -57,8 +52,7 @@ $pinterest:                 #CC2127;
           border-radius: $radius;
 }
 
-/* Opacity
-*/
+/* Opacity */
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacity-ie: $opacity * 100;
@@ -66,8 +60,7 @@ $pinterest:                 #CC2127;
 }
 
 
-/* Background Size
-*/
+/* Background Size */
 @mixin bg-size($bg-size) {
   -webkit-background-size: $bg-size;
      -moz-background-size: $bg-size;
@@ -76,8 +69,7 @@ $pinterest:                 #CC2127;
           background-size: $bg-size;
 }
 
-/* Box Sizing
-*/
+/* Box Sizing */
 @mixin box-sizing($box-sizing) {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -85,8 +77,7 @@ $pinterest:                 #CC2127;
           box-sizing: border-box;
 }
 
-/* Box Shadow
-*/
+/* Box Shadow */
 @mixin box-shadow($shadow1, $shadow2:false, $shadow3:false, $shadow4:false, $shadow5:false) {
  $params: $shadow1;
   @if $shadow2 
@@ -104,16 +95,14 @@ $pinterest:                 #CC2127;
           box-shadow: $params;
 }
 
-/* SVG
-*/
+/* SVG */
 @mixin svg-bg($name, $extension: png, $color: transparent, $position: 50% 50%, $repeat: no-repeat) {
   background: url(../images/svg/#{$name}.#{$extension}) $color $position $repeat;
   background: none, url(../images/svg/#{$name}.svg) $color $position $repeat;
   @include bg-size(cover);
 }
 
-/* Transition
-*/
+/* Transition */
 @mixin transition($args...) {
   -webkit-transition: $args;
      -moz-transition: $args;
@@ -122,8 +111,7 @@ $pinterest:                 #CC2127;
           transition: $args;
 }
 
-/* Transforms
-*/
+/* Transforms */
 @mixin transform($transforms) {
   -webkit-transform: $transforms;
      -moz-transform: $transforms;
@@ -151,8 +139,7 @@ $pinterest:                 #CC2127;
           transform-origin: $origin;
 }
 
-/* Animations
-*/
+/* Animations */
 @mixin keyframes($animation-name) {
   @-webkit-keyframes $animation-name {
     @content;

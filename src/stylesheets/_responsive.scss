@@ -1,0 +1,38 @@
+/* Responsive
+==================================== */
+
+@media only screen and (max-width: 980px) {
+	.columns {
+		padding: 0 5%;
+	}
+}
+
+@media only screen and (max-width: 736px) {
+	header {
+		.tagline {
+			display: none;
+		}
+	}
+	.columns {
+		[class*="col-"] {
+			max-width: 100%;
+		}
+	}
+}
+
+@media only screen and (max-width: 520px) {
+	.post-head {
+		h2.headline {
+			font-size: 40px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	.post-head {
+		h2.headline {
+			font-size: 30px;
+		}
+	}
+}

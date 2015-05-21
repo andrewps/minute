@@ -1,15 +1,11 @@
 extends ../layout
 
-
 block header
     include ../includes/header
 
-
 block content
-
-    //- Article template here
     .columns
-        .col-640
+        .col-7
             .post-head
                 .meta
                     small Translated: June 21 2014
@@ -18,17 +14,15 @@ block content
 
             article
                 .post-text
-                    .post-video
+                    .post-img
                         img(src="#{fakeArticle.top_image}")
-                        
-                        //- iframe(width='640', height='360', src='//www.youtube.com/embed/mosHFxtoVWI?rel=0&showinfo=0', frameborder='0', allowfullscreen='')
-
+                    //- video content here                    
+                        if article.has_video
+                            .post-video
+                                iframe(width='640', height='360', src='//www.youtube.com/embed/mosHFxtoVWI?rel=0&showinfo=0', frameborder='0', allowfullscreen='')
                     p
                         | #{fakeArticle.text}
                 .fin
                     
-        .col-280
+        .col-3
             include ../includes/rightrail
-
-    include ../includes/recirc
-

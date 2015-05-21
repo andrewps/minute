@@ -4,13 +4,14 @@
 * {   
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent; /* For some Androids */
+  @include box-sizing(border-box);
 }
 
 body {
     font-family: $sans;
     color: $black;
     background: $white;
-    margin-top: 160px;
+    margin-top: 180px;
 }
 
 h1, h2, h3 {
@@ -32,40 +33,47 @@ a {
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
-     @extend %clearfix;
+    @extend %clearfix;
+    @include box-sizing(border-box);
 }
 
 [class*="col-"] {
     width: 100%;
     float: left;
+    padding-right: 4%;
+    @include box-sizing(border-box);
     &:last-child {
         float: right;
-        margin: 0 !important;
+        padding: 0 !important;
     }
 }
 
-.col-280 {
-    max-width: 280px;
+.col-1 {
+    max-width: 10%;
 }
-
-.col-300 {
-    max-width: 300px;
+.col-2 {
+    max-width: 20%;
 }
-
-.col-600 {
-    max-width: 600px;
-}
-
-.col-640 {
-    max-width: 640px;
-}
-
 .col-3 {
-    max-width: 31.334%;
-    margin-right: 3%;
-    img {
-        width: 100%;
-    }
+    max-width: 30%;
+}
+.col-4 {
+    max-width: 40%;
+}
+.col-6 {
+    max-width: 60%;
+}
+.col-7 {
+    max-width: 70%;
+}
+.col-8 {
+    max-width: 80%;
+}
+.col-9 {
+    max-width: 90%;
+}
+.col-10 {
+    max-width: 100%;
 }
 
 .content {

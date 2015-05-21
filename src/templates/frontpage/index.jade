@@ -1,21 +1,23 @@
-//- Frontpage template here
+//- Front Page
 
-h1
-	| frontpage
-
-
-ul
-	for article in fakeArticleList
-		li
-			ul
-				li
-					a(href="/articles")
-						| #{article.title}
-
-				li
-					| #{article.text}
-				li
-					| #{article.url}
-				if article.top_image
+block content
+	.columns
+		.col-10
+			ul.frontpage
+				for article in fakeArticleList
 					li
-						| #{article.top_image}
+						if article.top_image
+							.article-img(style="background-image:url('#{article.top_image}')")
+								.article-title
+									a(href="/articles") #{article.title}
+						else
+							.article-noimg
+								.article-title
+									a(href="/articles") #{article.title}
+						.article-text #{article.text}
+						.article-url #{article.url}
+
+
+
+
+
