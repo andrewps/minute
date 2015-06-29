@@ -1,0 +1,37 @@
+/* Colors */
+$purple:                    #5E66A9;
+$yellow:                    #FFF961;
+$black:                     #2C2C2C;
+$white:                     #FFFFFF;
+$cyan:                      #78F8DE;
+$pink:                      #F7D3F4;
+$grey--1:                   #484D4B;
+
+/* Social */
+$facebook:                  #3B5998;
+$twitter:                   #55ACEE;
+$tumblr:                    #35465C;
+$reddit:                    #5F99CF;
+$digg:                      #000000;
+$googleplus:                #DD4B39;
+$whatsapp:                  #34AF23;
+$pinterest:                 #CC2127;
+
+$sans: 'Neuzeit Grotesk T OT', Helvetica, Arial, sans-serif;
+$serif: 'Domaine Display Narrow', serif;
+$condensed: 'Apercu', Helvetica, Arial, sans-serif;
+$titles: 'Domain Sans Text', Gill Sans, sans-serif;
+
+/* Clearfix */
+%clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content:'';
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}

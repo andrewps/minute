@@ -1,0 +1,114 @@
+/* Right Rail
+==================================== */
+
+section.right-rail {
+
+}
+
+.mod {
+    margin-bottom: 40px;
+}
+
+.shareability {    
+
+    .primary-share {
+        .fb-share, .tw-tweet {  
+            margin-bottom: 1rem;
+            a {
+                display: block;
+                color: $black;
+                @include transition(color .15s linear);
+                &:hover {
+                    text-decoration: none;
+                }
+                > * {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .ss-social {
+                    font-size: 2rem;
+                    margin-right: 1rem;
+                }
+                span {
+                    font-size: 3rem;
+                    font-weight: bold;
+                }
+            }
+        }
+        .fb-share {
+            a:hover {
+                color: $facebook;
+            }
+        }
+        .tw-tweet {
+            a:hover {
+                color: $twitter;
+            }
+        }
+    }
+
+    .secondary-share {
+        display: table;
+        width: 100%;
+        margin-top: 2rem;
+        span {
+            display: table-cell;
+            .network {
+                color: $grey--1;
+                cursor: pointer;
+                text-align: left;
+                @include transition(color .15s linear);
+                &:hover {
+                    &.facebook {
+                        color: $facebook;
+                    }
+                    &.twitter {
+                        color: $twitter;
+                    }
+                    &.tumblr {
+                        color: $tumblr;
+                    }
+                    &.reddit {
+                        color: $reddit;
+                    }
+                    &.digg {
+                        color: $digg;
+                    }
+                    &.googleplus {
+                        color: $googleplus;
+                    }
+                    &.pinterest {
+                        color: $pinterest;
+                    }
+                    &.whatsapp {
+                        color: $whatsapp;
+                    }
+                    &.email {
+                        color: $purple;
+                    }
+                }                       
+            }
+        }
+    }
+}
+
+.post-meta {    
+    width: 100%;
+    h4 {
+        color: $cyan;
+        margin: 0;
+    }
+    .origin {
+        > div {
+            margin: 1rem 0;
+        }
+    }
+}
+
+.mod.tags,
+.mod.mistakes {
+    line-height: 1.5rem;
+    a {
+        font-weight: bold;
+    }
+}

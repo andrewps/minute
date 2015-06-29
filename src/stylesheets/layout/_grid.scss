@@ -1,0 +1,30 @@
+.columns {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    @extend %clearfix;
+    @include box-sizing(border-box);
+}
+
+[class*="col-"] {
+    width: 100%;
+    float: left;
+    padding-right: 4%;
+    @include box-sizing(border-box);
+    &:last-child {
+        float: right;
+        padding: 0 !important;
+    }
+}
+.col-center {
+    float: none !important;
+    margin: 0 auto !important;
+}
+
+$colcount: 12;
+
+@for $i from 1 through $colcount {
+    .col-#{$i} {
+        max-width: ((100 / $colcount) * $i) * 1%;
+    }
+}

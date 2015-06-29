@@ -1,0 +1,48 @@
+$navheight: 4rem; 
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    height: $navheight;
+    background: $black;
+    .logo {
+        float: left;
+        a {
+            display: block;
+            margin: 0;
+            padding: 0;
+            line-height: $navheight;
+            height: $navheight;
+            color: $white;
+            font-family: $serif;
+            font-weight: light;
+            font-size: 2rem;
+            // background-image: url('/images/theminute.png');
+            // background-position: 50% 50%;
+            // background-repeat: no-repeat;
+            // @include bg-size(100%);
+            @include transition(all .15s linear);
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+    .tagline {
+        float: right;
+        font-weight: bold;
+        display: inline-block;
+        height: $navheight;
+        line-height: $navheight;
+        color: $white;
+        .button {
+            margin-left: 20px;
+            display: inline-block;
+        }
+    }
+}
+
+.logo-fade {
+    @include scale(.5);
+}

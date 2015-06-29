@@ -1,0 +1,86 @@
+/* Frontpage
+==================================== */
+
+$bg-color: #ff8888;
+$stops: 100;
+$time: 20s;
+$hue-range: 35;
+
+ul.frontpage {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+		list-style: none;
+		margin-bottom: 80px;
+		> div {
+			position: relative;
+		}
+	}
+}
+.article-text {}
+.article-url {}
+.article-img,
+.article-noimg {
+	display: block;
+	width: 100%;
+	min-height: 300px;
+	margin-bottom: 40px;
+	background-position: 50% 50%;
+	@include bg-size(cover);
+}
+.article-title {
+	padding: 20px;
+	font-family: $serif;
+	font-weight: 900;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	transform: translateX(-50%) translateY(-50%);
+	a {
+		font-size: 4rem;
+		line-height: 4.5rem;
+		background-color: $cyan;
+		white-space: pre-line;
+		word-spacing: normal;
+		word-break: break-word;
+		padding: .5rem 0;
+		box-shadow: $cyan .5rem 0, $cyan -.5rem 0 0;
+		&:hover {
+			color: $white;
+		}
+
+	}
+}
+.article-img {	
+}
+.article-noimg {
+	background-color: $bg-color;
+	-webkit-animation: colorChange $time linear 0s infinite;
+			animation: colorChange $time linear 0s infinite;
+	a {
+		color: $black;
+	}
+}
+
+@-webkit-keyframes colorChange{
+  @for $i from 0 through $stops{
+    $old-color: adjust-hue($bg-color, (360/$stops)*$i);
+    $new-color: adjust-hue($bg-color, (360/$stops)*$i + $hue-range);
+    #{$i}% {
+      background: -webkit-linear-gradient(left, $old-color, $new-color);
+      background: linear-gradient(to right, $old-color, $new-color);
+    }
+  } 
+}
+
+@keyframes colorChange{
+  @for $i from 0 through $stops{
+    $old-color: adjust-hue($bg-color, (360/$stops)*$i);
+    $new-color: adjust-hue($bg-color, (360/$stops)*$i + $hue-range);
+    #{$i}% {
+      background: linear-gradient(to right, $old-color, $new-color);
+    }
+  } 
+}

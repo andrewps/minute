@@ -1,8 +1,6 @@
-//- Front Page
-
 block content
 	.columns
-		.col-10
+		.col-10.col-center
 			ul.frontpage
 				for article in fakeArticleList
 					li
@@ -14,7 +12,7 @@ block content
 							.article-noimg
 								.article-title
 									a(href="/articles") #{article.title}
-						.article-text #{article.text}
+						.article-text: p #{article.text}
 						.article-url #{article.url}
 
 

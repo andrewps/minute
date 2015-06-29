@@ -1,15 +1,27 @@
 @charset "UTF-8";
 
-@import "_normalize";
-@import "_mixins";
-@import "_svg";
-@import "_fonts";
-@import "_global";
-@import "_frontpage";
-@import "_buttons";
-@import "_tooltips";
-@import "_header";
-@import "_article";
-@import "_rightrail";
-@import "_menu";
-@import "_responsive";
+//- helpers
+@import "helpers/_variables";
+@import "helpers/_mixins";
+
+//- base
+@import "base/_normalize";
+@import "base/_global";
+@import "base/_fonts";
+@import "base/_typography";
+
+//- components
+@import "components/_svg";
+@import "components/_buttons";
+@import "components/_tooltips";
+@import "components/_header";
+@import "components/_rightrail";
+
+//- pages
+@import "pages/_frontpage";
+@import "pages/_article";
+
+
+//- layouts
+@import "layout/_grid";
+@import "layout/_responsive";
