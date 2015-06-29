@@ -1,23 +1,80 @@
 @font-face {
   font-family: "Neuzeit";
-  src: url('../fonts/Neuzeit/urw_neuzeitgrotesktot-bla-webfont.ttf')  format('truetype');
+  src: url('../fonts/neuzeit/urw_neuzeitgrotesktot-bla-webfont.ttf')  format('truetype');
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Neuzeit";
-  src: url('../fonts/Neuzeit/urw_neuzeitgrotesktot-bol-webfont.ttf')  format('opentype');
+  src: url('../fonts/neuzeit/urw_neuzeitgrotesktot-bol-webfont.ttf')  format('opentype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Neuzeit";
-  src: url('../fonts/Neuzeit/urw_neuzeitgrotesktot-reg-webfont.ttf')  format('truetype');
+  src: url('../fonts/neuzeit/urw_neuzeitgrotesktot-reg-webfont.ttf')  format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Domaine Display";
+  src: url('../fonts/domaine/display/DomaineDispNar-Black.otf')  format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Domaine Display";
+  src: url('../fonts/domaine/display/DomaineDispNar-Extrabold.otf')  format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Domaine Display";
+  src: url('../fonts/domaine/display/DomaineDispNar-Bold.otf')  format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Domaine Display";
+  src: url('../fonts/domaine/display/DomaineDispNar-Semibold.otf')  format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Domaine Display";
+  src: url('../fonts/domaine/display/DomaineDispNar-Medium.otf')  format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Domaine Display";
+  src: url('../fonts/domaine/display/DomaineDispNar-Regular.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Domaine Sans";
+  src: url('../fonts/domaine/sans/DomaineSansText-Medium.otf')  format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Domaine Sans";
+  src: url('../fonts/domaine/sans/DomaineSansText-Regular.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @font-face {
   font-family: "SSStandard";

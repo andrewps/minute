@@ -4,79 +4,81 @@
 a.button,
 button.button {
     font-family: $sans;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: bold;
     position: relative;
     display: inline-block;
-    padding: 0 20px;
+    padding: 0;
     width: auto;
-    height: 60px;
-    line-height: 60px;
+    height: 3rem;
+    line-height: 3rem;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    @include transition(all .1s linear);
+    overflow: hidden;
+    * {
+        cursor: pointer;
+    }
+    label {
+        position: relative;
+        @include transition(all .25s ease);
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 0 1rem; 
+    }
+    [class*="ss-"] {
+        font-family: $icon;
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        font-size: 75%;
+        text-align: center;
+        @include transition(all .25s ease);
+    }
     &:hover {
-        @include scale(1.1);
-    }
-    &:active {
-        @include scale(1);
-    }
-    &.button-yellow { 
-        background-color: $yellow;
-        color: $black;
-        &:hover {            
+        [class*="ss-"] {
+            left: 0;
         }
-        &:active {
-            background-color: darken($yellow, 5%);
+        label {
+            left: 100%;
         }
     }
-    &.button-cyan { 
-        background-color: $cyan;
-        color: $black;
-        &:hover {            
-        }
-        &:active {
-            background-color: darken($cyan, 5%);
-        }
-    }
-    &.button-purple { 
-        background-color: $purple;
-        color: $white;
-        &:hover {            
-        }
-        &:active {
-            background-color: darken($purple, 5%);
-        }
-    }
-    &.button-pink { 
-        background-color: $pink;
-        color: $black;
-        &:hover {            
-        }
-        &:active {
-            background-color: darken($pink, 5%);
-        }
-    }
-    &.button-icon {
-        label, .ss-icon {
-            cursor: pointer;
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .ss-icon {
-            margin-left: 10px;
-            font-size: 80%
-        }
+    &:active, &:focus {
+        outline: none;
+        border: none;
     }
     &.button-fluid {
         width: 100%;
         padding: 0;
     }
     &.button-tiny {
-        height: 35px;
-        line-height: 35px;
-        font-size: 14px;
-        padding: 0 15px; 
+        height: 2rem;
+        line-height: 2rem;
+        [class*="ss-"] {
+            line-height: (3rem - .6rem);
+        }
+        label {
+        }
     }
+}
+
+$button-colors: (
+        cyan $cyan $black,
+        yellow $yellow $black,
+        black $black white
+    );
+
+.button {
+  @each $type in $button-colors {
+    &.button-#{nth($type, 1)} {
+      background-color: #{nth($type, 2)};
+      color: #{nth($type, 3)};
+      &:hover {
+        background-color: lighten(nth($type, 2), 10%);
+      }
+    }
+  }
 }

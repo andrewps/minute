@@ -36,9 +36,13 @@ header {
         height: $navheight;
         line-height: $navheight;
         color: $white;
-        .button {
-            margin-left: 20px;
+        span {
             display: inline-block;
+            margin-right: 2rem;
+        }
+        .button {
+            display: inline-block;
+            vertical-align: middle;
         }
     }
 }

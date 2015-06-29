@@ -39,16 +39,16 @@ ul.frontpage {
 	width: 100%;
 	transform: translateX(-50%) translateY(-50%);
 	a {
-		font-size: 4rem;
-		line-height: 4.5rem;
-		background-color: $cyan;
+		font-size: 3rem;
+		line-height: 3.5rem;
+		background-color: $white;
 		white-space: pre-line;
 		word-spacing: normal;
 		word-break: break-word;
 		padding: .5rem 0;
-		box-shadow: $cyan .5rem 0, $cyan -.5rem 0 0;
+		box-shadow: $white .5rem 0, $white -.5rem 0 0;
 		&:hover {
-			color: $white;
+			color: $cyan;
 		}
 
 	}

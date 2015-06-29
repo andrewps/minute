@@ -4,14 +4,12 @@
     -webkit-tap-highlight-color: transparent; /* For some Androids */
     @include box-sizing(border-box);
 }
-
 body {
     font-family: $sans;
     color: $black;
     background: $white;
     margin-top: 6rem;
 }
-
 a {
     cursor: pointer;
     color: $black;
@@ -20,7 +18,9 @@ a {
     &:hover {
     }
 }
-
+img {
+    max-width: 100%;
+}
 .content {
     position: relative;
     z-index: 1;
