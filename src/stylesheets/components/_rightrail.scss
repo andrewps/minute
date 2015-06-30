@@ -17,6 +17,7 @@ section.right-rail {
             a {
                 display: block;
                 color: $black;
+                border: none;
                 @include transition(color .15s linear);
                 &:hover {
                     text-decoration: none;

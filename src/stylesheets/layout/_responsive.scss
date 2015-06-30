@@ -1,16 +1,17 @@
-/* Responsive
-==================================== */
+@media only screen and (max-width: 1200px) {
+	.columns {
+		padding: 0 1rem;
+	}
+}
 
 @media only screen and (max-width: 980px) {
-	.columns {
-		padding: 0 5%;
-	}
+	
 }
 
 @media only screen and (max-width: 800px) {
 	header {
 		.tagline {
-			small {
+			span {
 				display: none;
 			}
 		}
@@ -21,15 +22,40 @@
 	.columns {
 		[class*="col-"] {
 			max-width: 100%;
+			margin-bottom: 1rem;
+			padding: 0;
 		}
 	}
+	.modal {
+		width: 80%;
+	}
+	.article-title {
+		top: auto;
+		bottom: -3rem;
+		left: 0;
+		@include transform(none);
+		a {
+			font-size: 2rem;
+			line-height: 2.6rem;
+		}
+	}
+	.article-text {
+		display: none;
+	}
+
 }
 
 @media only screen and (max-width: 520px) {
 	.post-head {
-		h2.headline {
-			font-size: 40px;
-			margin-bottom: 20px;
+		h1 {
+			font-size: 2.4rem;
+			line-height: 2.8rem;
+		}
+	}
+	.modal {
+		width: 95%;
+		.button {
+			width: 100%;
 		}
 	}
 }

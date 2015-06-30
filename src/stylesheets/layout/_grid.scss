@@ -1,3 +1,6 @@
+* {
+    @include box-sizing(border-box);
+}
 .columns {
     width: 100%;
     max-width: 1200px;

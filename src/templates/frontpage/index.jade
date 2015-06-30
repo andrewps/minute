@@ -12,7 +12,11 @@ block content
 							.article-noimg
 								.article-title
 									a(href="/articles") #{article.title}
-						.article-text: p #{article.text}
+						.article-text
+							p #{article.text}
+							a(href="/articles").button.button-cyan
+								.ss-navigateright
+								label Read Article
 						.article-url #{article.url}
 
 

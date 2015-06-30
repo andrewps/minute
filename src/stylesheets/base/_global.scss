@@ -1,8 +1,7 @@
-*, html {
+html {
     font-size: 16px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent; /* For some Androids */
-    @include box-sizing(border-box);
 }
 body {
     font-family: $sans;
@@ -13,9 +12,12 @@ body {
 a {
     cursor: pointer;
     color: $black;
+    font-weight: bold;
     text-decoration: none;
+    border-bottom: 2px solid $yellow;
     transition: all .2s ease;
     &:hover {
+        border-color: $cyan;
     }
 }
 img {

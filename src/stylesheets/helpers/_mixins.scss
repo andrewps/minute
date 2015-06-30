@@ -1,4 +1,10 @@
-/* Radius */
+@mixin centering() {
+  -webkit-transform: translateX(-50%) translateY(-50%);
+     -moz-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+       -o-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
 @mixin radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -6,16 +12,11 @@
        -o-border-radius: $radius;
           border-radius: $radius;
 }
-
-/* Opacity */
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacity-ie: $opacity * 100;
   filter: alpha(opacity=$opacity-ie); //IE8
 }
-
-
-/* Background Size */
 @mixin bg-size($bg-size) {
   -webkit-background-size: $bg-size;
      -moz-background-size: $bg-size;
@@ -23,16 +24,12 @@
        -o-background-size: $bg-size;
           background-size: $bg-size;
 }
-
-/* Box Sizing */
 @mixin box-sizing($box-sizing) {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
       -ms-box-sizing: border-box;
           box-sizing: border-box;
 }
-
-/* Box Shadow */
 @mixin box-shadow($shadow1, $shadow2:false, $shadow3:false, $shadow4:false, $shadow5:false) {
  $params: $shadow1;
   @if $shadow2 
@@ -49,15 +46,11 @@
        -o-box-shadow: $params;
           box-shadow: $params;
 }
-
-/* SVG */
 @mixin svg-bg($name, $extension: png, $color: transparent, $position: 50% 50%, $repeat: no-repeat) {
-  background: url(../images/svg/#{$name}.#{$extension}) $color $position $repeat;
-  background: none, url(../images/svg/#{$name}.svg) $color $position $repeat;
+  background: url(/images/#{$name}@2x.#{$extension}) $color $position $repeat;
+  background: none, url(/images/svg/#{$name}.svg) $color $position $repeat;
   @include bg-size(cover);
 }
-
-/* Transition */
 @mixin transition($args...) {
   -webkit-transition: $args;
      -moz-transition: $args;
@@ -65,8 +58,6 @@
        -o-transition: $args;
           transition: $args;
 }
-
-/* Transforms */
 @mixin transform($transforms) {
   -webkit-transform: $transforms;
      -moz-transform: $transforms;
@@ -93,8 +84,6 @@
        -o-transform-origin: $origin;
           transform-origin: $origin;
 }
-
-/* Animations */
 @mixin keyframes($animation-name) {
   @-webkit-keyframes $animation-name {
     @content;
@@ -112,7 +101,6 @@
     @content;
   }
 }
-
 @mixin animation($str) {
   -webkit-animation: #{$str};
      -moz-animation: #{$str};
