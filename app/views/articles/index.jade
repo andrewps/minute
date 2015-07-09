@@ -14,21 +14,27 @@ block content
 
             article
 
-                .post-text
-                    if article.article.movies && article.article.movies.length
-                        .post-video
-                            iframe(width='640', height='360', src='#{article.article.movies[Math.floor(Math.random()*article.article.movies.length)]}', frameborder='0', allowfullscreen='')
+                if article.article
+                    .post-text
+                        if article.article.movies && article.article.movies.length
+                            .post-video
+                                iframe(width='640', height='360', src='#{article.article.movies[Math.floor(Math.random()*article.article.movies.length)]}', frameborder='0', allowfullscreen='')
 
-                    else if article.article.featured_image
-                        .post-image
-                            img(src="#{article.article.featured_image}", style="width:100%;")
+                        else if article.article.featured_image
+                            .post-image
+                                img(src="#{article.article.featured_image}", style="width:100%;")
 
-                    else if article.article.images && article.article.images.length
-                        .post-image
-                            img(src="#{article.article.images[Math.floor(Math.random()*article.article.images.length)]}", style="width:100%;")
+                        else if article.article.images && article.article.images.length
+                            .post-image
+                                img(src="#{article.article.images[Math.floor(Math.random()*article.article.images.length)]}", style="width:100%;")
 
-                    p
-                        | #{article.content}
+                        p
+                            | #{article.content}
+
+                else
+                    .post-text
+                        p
+                            | #{article.text}
 
                 .fin
                     

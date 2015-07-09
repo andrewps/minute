@@ -51,21 +51,38 @@ section.right-rail
         .post-meta
             h4
                 | Original Article
-            .origin
-                div Origin: 
-                    a(href="#{article.article.source.url}", target="_blank") 
-                        | #{article.article.source.name}, #{article.article.source.location}
-                div 
-                    | Language: 
-                    a(href="/#{language}/?language=#{article.article.source.language.short_code}") #{article.article.source.language.name}
-            a(href="#{article.article.url}", target="_blank").button.button-cyan.button-icon.button-fluid
-                label Read original post
-                .ss-icon.ss-right
+            if article.article
+                .origin
+                    div Origin: 
+                        a(href="#{article.article.source.url}", target="_blank") 
+                            | #{article.article.source.name}, #{article.article.source.location}
+                    div 
+                        | Language: 
+                        a(href="/#{language}/?language=#{article.article.source.language.short_code}") #{article.article.source.language.name}
+                a(href="#{article.article.url}", target="_blank").button.button-cyan.button-icon.button-fluid
+                    label Read original post
+                    .ss-icon.ss-right
+            else
+                .origin
+                    | fake data for testing
+                    div Origin: 
+                        a(href="", target="_blank") 
+                            | #{'article.article.source.name'}, #{'article.article.source.location'}
+                    div 
+                        | Language: 
+                        a(href="/#{'language'}/?language=#{'article.article.source.language.short_code'}") #{'article.article.source.language.name'}
+                a(href="#{'article.article.url'}", target="_blank").button.button-cyan.button-icon.button-fluid
+                    label Read original post
+                    .ss-icon.ss-right
     .mod
         .tags
             b Read More. 
-            each keyword in article.article.keywords
-                a(href="#") #{keyword}, 
+            if article.article
+                each keyword in article.article.keywords
+                    a(href="#") #{keyword}, 
+            else
+                each keyword in ['keyword1', 'keyword2', 'keyword3', 'keyword4']
+                    a(href="#") #{keyword}, 
     .mod
         .find-mistake
             p 

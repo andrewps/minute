@@ -5,6 +5,7 @@
 
 var rest = require('restler');
 var _ = require('lodash');
+var fakeArticles = require('../../sample-data/articles');
 
 // create a service constructor for very easy API wrappers a la HTTParty...
 var Minute = rest.service(function() {}, {
@@ -47,16 +48,27 @@ exports.listArticles = function(req, res) {
     var originalLanguage = req.query.language;
 
 
-    client.fetchArticles(language, originalLanguage).on('success', function(response) {
-
-        var articles = response.results;
-
-        res.render('index', {
-            articles: articles,
-            language: language
+    client
+        .fetchArticles(language, originalLanguage)
+        .on('success', function(response) {
+            var articles = response.results;
+            res.render('index', {
+                articles: articles,
+                language: language
+            });
+        }).on('error', function(err) {
+            console.log('err')
+            res.render('index', {
+                articles: fakeArticles,
+                language: language
+            });
+        }).on('fail', function(err) {
+            console.log('fail')
+            res.render('index', {
+                articles: fakeArticles,
+                language: language
+            });
         });
-
-    });
 
 };
 
@@ -66,19 +78,23 @@ exports.readArticle = function(req, res) {
     var language = req.params.language;
     var slug = req.params.slug;
 
-    client.fetchArticle(language, slug).on('complete', function(response) {
-
-        var articles = response.results;
-
-        if(!articles.length) {
-            return res.status(404).send();
-        }
-
-
-        return res.render('articles/index', {
-            article: articles[0],
-            language: language
+    client
+        .fetchArticle(language, slug)
+        .on('sucess', function(response) {
+            var articles = response.results;
+            if(!articles.length) {
+                return res.status(404).send();
+            }
+            return res.render('articles/index', {
+                article: articles[0],
+                language: language
+            });
+        }).on('fail', function(err) {
+            res.render('articles/index', {
+                article: fakeArticles[0],
+                language: language
+            });
         });
-    });
+;
 
 };

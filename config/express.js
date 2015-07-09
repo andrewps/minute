@@ -38,7 +38,7 @@ module.exports = function (app) {
     }));
 
     // Static files middleware
-    app.use(favicon(path.resolve(__dirname + '/../public/images/favicon.ico')));
+    // app.use(favicon(path.resolve(__dirname + '/../public/images/favicon.ico')));
     app.use(serveStatic(config.root + '/public'));
 
     // Use winston on production
