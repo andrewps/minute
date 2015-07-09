@@ -5,12 +5,10 @@ block header
 
 block content
     .columns
-        .col-7
+        .col-8
             .post-head
-                .meta
-                    small Translated: #{moment(article.publish_date).format('MMMM Do YYYY')}
-                h2.headline          
-                    | #{article.title}
+                .meta: small Translated: #{moment(article.publish_date).format('MMMM Do YYYY')}
+                h2.headline #{article.title}
 
             article
 
@@ -28,15 +26,20 @@ block content
                             .post-image
                                 img(src="#{article.article.images[Math.floor(Math.random()*article.article.images.length)]}", style="width:100%;")
 
-                        p
-                            | #{article.content}
+                        p #{article.content}
 
                 else
                     .post-text
-                        p
-                            | #{article.text}
-
-                .fin
-                    
-        .col-3
-            include ../includes/rightrail
+                        p #{article.text}
+                .fin                    
+        .col-4: include ../includes/rightrail
+    .pages
+        .columns
+            .col-3
+                .text-left: a.button.button-fluid.button-black(href="#")
+                    .ss-navigateleft
+                    label Previous
+            .col-3
+                .text-right: a.button.button-fluid.button-black(href="#")
+                    .ss-navigateright 
+                    label Next

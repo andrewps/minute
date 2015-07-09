@@ -10,7 +10,7 @@
     "email": ""
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js --watch app/"
   },
   "repository": {
     "type": "git",

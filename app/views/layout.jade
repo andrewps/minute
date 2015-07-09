@@ -28,10 +28,10 @@ body
     script(src='#{STATIC_URL}js/lib/modals.js')
 
     script.
-        //- $document.scroll(function() {
-        //-     if ($document.scrollTop() >= 10) {
-        //-         $('header h1.logo').addClass('fade-logo');
-        //-     } else {
-        //-         $('header h1.logo').removeClass('fade-logo');
-        //-     }
-        //- });
+        $document.scroll(function() {
+            if ($document.scrollTop() >= 10) {
+                $('header h1.logo').addClass('fade-logo');
+            } else {
+                $('header h1.logo').removeClass('fade-logo');
+            }
+        });
