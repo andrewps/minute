@@ -1,0 +1,58 @@
+/* Responsive
+==================================== */
+
+@media only screen and (max-width: 980px) {
+	.columns {
+		padding: 0 5%;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	header {
+		.tagline {
+			small {
+				display: none;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 736px) {
+	.columns {
+		[class*="col-"] {
+			max-width: 100%;
+		}
+	}
+}
+
+@media only screen and (max-width: 520px) {
+	.post-head {
+		h2.headline {
+			font-size: 40px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media only screen and (max-width: 430px) {
+	header {
+		.nydc {
+			margin-left: 10px;
+			small {
+				display: none;
+			}
+		}
+		.tagline {
+			.button {
+				font-size: 12px;
+				margin: 0;
+				padding: 0 10px;
+			}
+		}
+	}
+	.post-head {
+		h2.headline {
+			font-size: 30px;
+		}
+	}
+}

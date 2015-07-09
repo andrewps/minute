@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        meta(http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE")
+        meta(charset="UTF-8")
+        block meta
+        link(rel='stylesheet', href='#{STATIC_URL}css/app.css')
+
+body
+    block header
+    block content
+
+    #about.modal
+        .modal-header: h2 About
+        .modal-body
+            p The Minute curates trending stories from around the world and automatically translates them into English.
+            p 
+                span This is an experiment produced by 
+                a(href="http://nydata.co") The New York Data Company
+            .nydc
+        a.button.button-black(href="#") 
+            .ss-navigateright
+            label Read Our Post
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(src='#{STATIC_URL}js/app.js')
+    script(src='#{STATIC_URL}js/lib/modals.js')
+
+    script.
+        //- $document.scroll(function() {
+        //-     if ($document.scrollTop() >= 10) {
+        //-         $('header h1.logo').addClass('fade-logo');
+        //-     } else {
+        //-         $('header h1.logo').removeClass('fade-logo');
+        //-     }
+        //- });
