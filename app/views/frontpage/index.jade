@@ -1,11 +1,10 @@
 block content
     .columns
         .col-10.col-center
-            ul.frontpage
+            ul.frontpage        
                 each articles, source in articleSources
                     | #{source}
                     for article in articles
-                        frontpage
                         li
                             if article.top_image
                                 .article-img(style="background-image:url('#{article.top_image}')")
