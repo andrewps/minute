@@ -27,14 +27,14 @@ block content
                                 img(src="#{article.article.images[Math.floor(Math.random()*article.article.images.length)]}", style="width:100%;")
 
                         p #{article.content}
-                        a(href="#{article.article.url}", target="_blank").button.button-cyan.button-icon.button-fluid
+                        a(href="#{article.article.url}", target="_blank").button.button-royal.button-icon.button-fluid
                             label Read original post
                             .ss-icon.ss-right
 
                 else
                     .post-text
                         p #{article.text}
-                    a(href="#{article.article.url}", target="_blank").button.button-cyan.button-icon.button-fluid
+                    a(href="#{article.article.url}", target="_blank").button.button-royal.button-icon.button-fluid
                         label Read original post
                         .ss-icon.ss-right
                 .fin                    

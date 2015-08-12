@@ -11,51 +11,75 @@ ul.frontpage {
 	padding: 0;
 	list-style: none;
 	li {
-		list-style: none;
-		margin-bottom: 80px;
-		> div {
-			position: relative;
-		}
-	}
+    a {
+      display: block;
+      // transition: all .2s ease;
+      border: none;
+      background-color: $white;
+      overflow: hidden;
+      .article-img {
+        background-blend-mode: multiply;
+        background-color: $royal;
+        transition: background-color .2s ease;
+      }
+      .article-title {
+        position: relative;
+        top: 0;
+        opacity: 1;
+        transition: opacity .2s ease, top .4s ease;
+      }
+      .article-source {
+        color: $white;
+      }
+      &:hover {        
+        .article-img {
+          background-color: $white;
+        }
+        .article-title {
+          top: -20rem;
+          opacity: 0;
+          color: $royal;
+        }
+      }
+    }
+  }
 }
-.article-text {}
-.article-url {}
+
+.article-source {
+  font-weight: normal;
+  padding: 1rem; 
+  font-size: 1rem;
+  .ss-globe {
+    display: inline-block;
+    margin-right: .5rem;
+    font-size: 75%;
+  }
+}
 .article-img,
 .article-noimg {
 	display: block;
 	width: 100%;
-	min-height: 300px;
-	margin-bottom: 2rem;
 	background-position: 50% 50%;
 	@include bg-size(cover);
+  border: 10px solid $white;
 }
 .article-title {
 	padding: 1rem;
-	font-family: $serif;
+  padding-top: 5rem;
+	font-family: $sans;
 	font-weight: 900;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 100%;
-	@include centering();
-	a {
-		font-size: 3rem;
-		line-height: 3.5rem;
-		background-color: $white;
+	span {
+    font-size: 2rem;
+    line-height: 2.4rem;
     border: none;
-		white-space: pre-line;
-		word-spacing: normal;
-		word-break: break-word;
-		padding: .5rem 0;
-		box-shadow: $white .5rem 0, $white -.5rem 0 0;
-		&:hover {
-			color: $cyan;
-		}
-
+    white-space: pre-line;
+    word-spacing: normal;
+    word-break: break-word;
+    color: $white;
 	}
 }
-.article-img {	
-}
+
+
 .article-noimg {
 	background-color: $bg-color;
 	-webkit-animation: colorChange $time linear 0s infinite;
@@ -64,7 +88,6 @@ ul.frontpage {
 		color: $black;
 	}
 }
-
 @-webkit-keyframes colorChange{
   @for $i from 0 through $stops{
     $old-color: adjust-hue($bg-color, (360/$stops)*$i);
@@ -75,7 +98,6 @@ ul.frontpage {
     }
   } 
 }
-
 @keyframes colorChange{
   @for $i from 0 through $stops{
     $old-color: adjust-hue($bg-color, (360/$stops)*$i);

@@ -84,34 +84,34 @@ gulp.task('images', function() {
             .pipe( livereload( server ));
 });
 
-gulp.task('jade', function() {
+// gulp.task('jade', function() {
 
-    delete require.cache[require.resolve('./src/js/utils')];
-    var utils = require('./src/js/utils');
+//     delete require.cache[require.resolve('./src/js/utils')];
+//     var utils = require('./src/js/utils');
     
-    var host = '/interactives/' + projectName + '/';
+//     var host = '/interactives/' + projectName + '/';
 
-    if(!PRODUCTION_MODE) {
-        host = '/';
-    }
+//     if(!PRODUCTION_MODE) {
+//         host = '/';
+//     }
 
-    return gulp.src('src/templates/**/index.jade')
-               .pipe(jade({
-                    pretty: !PRODUCTION_MODE,
-                    locals: {
-                        utils: utils,
-                        d3: d3,
-                        STATIC_URL: host,
-                        _: _,
-                        fakeArticle: fakeArticle,
-                        fakeArticleList: fakeArticleList
-                    }
-               }))
-               .on('error', gutil.log)
-               .on('error', gutil.beep)
-               .pipe(gulp.dest('./public/'))
-               .pipe( livereload( server ));
-});
+//     return gulp.src('src/templates/**/index.jade')
+//                .pipe(jade({
+//                     pretty: !PRODUCTION_MODE,
+//                     locals: {
+//                         utils: utils,
+//                         d3: d3,
+//                         STATIC_URL: host,
+//                         _: _,
+//                         fakeArticle: fakeArticle,
+//                         fakeArticleList: fakeArticleList
+//                     }
+//                }))
+//                .on('error', gutil.log)
+//                .on('error', gutil.beep)
+//                .pipe(gulp.dest('./public/'))
+//                .pipe( livereload( server ));
+// });
 
 gulp.task('templates', ['static'], function() {
     // return gulp.start('jade');
@@ -130,9 +130,8 @@ gulp.task('watch', function () {
       return console.log(err);
     }
  
-    gulp.watch('src/stylesheets/**/*.{scss,css}',['css', 'jade']);
+    gulp.watch('src/stylesheets/**/*.{scss,css}',['css']);
     gulp.watch('src/js/**/*.js',['js']);
-    gulp.watch('src/templates/**/*.jade',['jade', 'js']);
   });
 });
 

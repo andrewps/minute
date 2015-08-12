@@ -4,7 +4,8 @@ html(lang="en")
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
         meta(http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE")
         meta(charset="UTF-8")
-        block meta
+        block meta        
+        script(src="#{STATIC_URL}js/lib/modernizr.custom.js")
         link(rel='stylesheet', href='#{STATIC_URL}css/app.css')
 
 body
@@ -31,11 +32,24 @@ body
         block header
         block content
         block footer
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-    script(src='#{STATIC_URL}js/app.js')
-    script(src='#{STATIC_URL}js/lib/modals.js')
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+    script(src="#{STATIC_URL}js/app.js")
+    script(src="#{STATIC_URL}js/lib/modals.js")
     //- script(src='#{STATIC_URL}js/lib/dynamics.js')
-    //- script(src='#{STATIC_URL}js/lib/cassie.js')
+    
+    script(src="#{STATIC_URL}js/lib/masonry.pkgd.min.js")
+    script(src="#{STATIC_URL}js/lib/imagesloaded.js")
+    script(src="#{STATIC_URL}js/lib/classie.js")
+    script(src="#{STATIC_URL}js/lib/AnimOnScroll.js")
+
+    script.
+        new AnimOnScroll( document.getElementById( 'grid' ), {
+            minDuration : 0.4,
+            maxDuration : 0.7,
+            viewportFactor : 0.2
+        });
+
+
     script.
         $('a[href="#about"]').click(function(event) {
           event.preventDefault();
