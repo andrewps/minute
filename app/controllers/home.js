@@ -9,7 +9,7 @@ var fakeArticles = require('../../sample-data/articles');
 
 // create a service constructor for very easy API wrappers a la HTTParty...
 var Minute = rest.service(function() {}, {
-  baseURL: 'http://localhost:8000'
+  baseURL: 'http://7f85ccfb.ngrok.com'
 }, {
 
     fetchArticles: function(language, originalLanguage) {
@@ -49,8 +49,12 @@ exports.listArticles = function(req, res) {
         .fetchArticles(language, originalLanguage)
         .on('success', function(response) {
             var articles = response.results;
+
+            articles = _.groupBy(articles, function(a) {
+                return a.article.source.name;
+            });
             res.render('index', {
-                articles: articles,
+                articleSources: articles,
                 language: language
             });
         }).on('error', function(err) {
@@ -81,6 +85,8 @@ exports.readArticle = function(req, res) {
             if(!articles.length) {
                 return res.status(404).send();
             }
+
+
             return res.render('articles/index', {
                 article: articles[0],
                 language: language
