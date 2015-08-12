@@ -4,7 +4,6 @@ block content
             ul.frontpage
                 each articles, source in articleSources
                     | #{source}
-
                     for article in articles
                         frontpage
                         li
@@ -17,19 +16,3 @@ block content
                                 .article-img(style="background-image:url('#{article.article.images[Math.floor(Math.random()*article.article.images.length)]}')")
                                     .article-title
                                         a(href="./#{article.slug}") #{article.title}
-
-                            else
-                                .article-noimg
-                                    .article-title
-                                        a(href="./#{article.slug}") #{article.title}
-                            .article-text
-                                p #{article.text}
-                                a(href="./#{article.slug}").button.button-cyan
-                                    .ss-navigateright
-                                    label Read Article
-                            .article-url #{article.url}
-
-
-
-
-
