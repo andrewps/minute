@@ -22,10 +22,11 @@ var Minute = rest.service(function() {}, {
     },
 
     fetchArticle: function(language, slug) {
-        return this.get('/api/translated-articles', { 
+        return this.get('/api/translated-articles/', { 
             query: { 
                 'language__short_code': language,
-                slug: slug
+                slug: slug,
+                format: 'json'
             }
         });  
     }
@@ -36,17 +37,13 @@ var client = new Minute();
 
 
 exports.home = function (req, res) {
-
-    console.log('helllo');
     return res.redirect('/en');
 };
 
 
 exports.listArticles = function(req, res) {
-
     var language = req.params.language;
     var originalLanguage = req.query.language;
-
 
     client
         .fetchArticles(language, originalLanguage)
@@ -74,13 +71,12 @@ exports.listArticles = function(req, res) {
 
 
 exports.readArticle = function(req, res) {
-
     var language = req.params.language;
     var slug = req.params.slug;
 
     client
         .fetchArticle(language, slug)
-        .on('sucess', function(response) {
+        .on('success', function(response) {
             var articles = response.results;
             if(!articles.length) {
                 return res.status(404).send();
@@ -89,12 +85,15 @@ exports.readArticle = function(req, res) {
                 article: articles[0],
                 language: language
             });
+        }).on('error', function(err) {
+            res.render('articles/index', {
+                article: fakeArticles[0],
+                language: language
+            });
         }).on('fail', function(err) {
             res.render('articles/index', {
                 article: fakeArticles[0],
                 language: language
             });
         });
-;
-
 };
