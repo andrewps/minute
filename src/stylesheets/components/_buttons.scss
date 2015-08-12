@@ -28,7 +28,8 @@ button.button {
         left: 0;
         padding: 0 1rem; 
     }
-    [class*="ss-"] {
+    [class*="ss-"],
+    img {
         font-family: $icon;
         content: " ";
         position: absolute;
@@ -40,7 +41,8 @@ button.button {
         @include transition(all .25s ease);
     }
     &:hover {
-        [class*="ss-"] {
+        [class*="ss-"],
+        img {
             left: 0;
         }
         label {

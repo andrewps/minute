@@ -8,30 +8,36 @@ html(lang="en")
         link(rel='stylesheet', href='#{STATIC_URL}css/app.css')
 
 body
-    block header
-    block content
-
     #about.modal
         .modal-header: h2 About
         .modal-body
-            p The Minute curates trending stories from around the world and automatically translates them into English.
-            p 
+            h4 The Minute curates trending stories from around the world and automatically translates them into English.
+            p
                 span This is an experiment produced by 
-                a(href="http://nydata.co") The New York Data Company
-            .nydc
-        a.button.button-black(href="#") 
-            .ss-navigateright
-            label Read Our Post
-
+                a(href="http://nydata.co") The New York Data Company.
+        .modal-footer: .columns
+            .col-6
+                p.text-center Want to contribute to this project?
+                a.button.button-fluid.button-black(href="#") 
+                    //- img(src="#{STATIC_URL}images/svg/github-octocat.svg")
+                    .ss-social.ss-github
+                    label Fork on Github
+            .col-6
+                p.text-center Or read more
+                a.button.button-fluid.button-black(href="#") 
+                    .ss-navigateright
+                    label Read Our Post
+    #page
+        block header
+        block content
+        block footer
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
     script(src='#{STATIC_URL}js/app.js')
     script(src='#{STATIC_URL}js/lib/modals.js')
-
+    //- script(src='#{STATIC_URL}js/lib/dynamics.js')
+    //- script(src='#{STATIC_URL}js/lib/cassie.js')
     script.
-        $document.scroll(function() {
-            if ($document.scrollTop() >= 10) {
-                $('header h1.logo').addClass('fade-logo');
-            } else {
-                $('header h1.logo').removeClass('fade-logo');
-            }
+        $('a[href="#about"]').click(function(event) {
+          event.preventDefault();
+          $(this).modal();
         });
