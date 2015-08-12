@@ -12,11 +12,20 @@ ul.frontpage {
 	list-style: none;
 	li {
     a {
-      display: block;
-      // transition: all .2s ease;
       border: none;
+      display: block;
       background-color: $white;
       overflow: hidden;
+      .halftone {
+        border: 1rem solid $white;     
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url('/images/svg/dots.svg');
+        transition: background .2s ease;
+      }
       .article-img {
         background-blend-mode: multiply;
         background-color: $royal;
@@ -27,11 +36,36 @@ ul.frontpage {
         top: 0;
         opacity: 1;
         transition: opacity .2s ease, top .4s ease;
+        padding: 2rem;
+        padding-top: 5rem;
+        font-family: $sans;
+        font-weight: 900;
+        span {
+          font-size: 2rem;
+          line-height: 2.4rem;
+          border: none;
+          white-space: pre-line;
+          word-spacing: normal;
+          word-break: break-word;
+          color: $white;
+        }
       }
       .article-source {
+        position: relative;
         color: $white;
+        font-weight: normal;
+        padding: 2rem; 
+        font-size: 1rem;
+        .ss-globe {
+          display: inline-block;
+          margin-right: .5rem;
+          font-size: 75%;
+        }
       }
-      &:hover {        
+      &:hover {
+        .halftone {
+          background: none;
+        }    
         .article-img {
           background-color: $white;
         }
@@ -45,38 +79,12 @@ ul.frontpage {
   }
 }
 
-.article-source {
-  font-weight: normal;
-  padding: 1rem; 
-  font-size: 1rem;
-  .ss-globe {
-    display: inline-block;
-    margin-right: .5rem;
-    font-size: 75%;
-  }
-}
 .article-img,
 .article-noimg {
 	display: block;
 	width: 100%;
 	background-position: 50% 50%;
 	@include bg-size(cover);
-  border: 10px solid $white;
-}
-.article-title {
-	padding: 1rem;
-  padding-top: 5rem;
-	font-family: $sans;
-	font-weight: 900;
-	span {
-    font-size: 2rem;
-    line-height: 2.4rem;
-    border: none;
-    white-space: pre-line;
-    word-spacing: normal;
-    word-break: break-word;
-    color: $white;
-	}
 }
 
 

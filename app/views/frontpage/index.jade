@@ -11,6 +11,7 @@ block content
                             //-     span #{source}
                             if article.top_image
                                 a(href="./#{article.slug}")
+                                    .halftone
                                     .article-img(style="background-image:url('#{article.top_image}')")
                                         .article-title
                                             span #{article.title}
@@ -23,6 +24,7 @@ block content
                             
                             else if article.article.images && article.article.images.length
                                 a(href="./#{article.slug}")
+                                    .halftone
                                     .article-img(style="background-image:url('#{article.article.images[Math.floor(Math.random()*article.article.images.length)]}')")
                                         .article-title
                                             span #{article.title}
