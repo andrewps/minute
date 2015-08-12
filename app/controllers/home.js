@@ -9,7 +9,7 @@ var fakeArticles = require('../../sample-data/articles');
 
 // create a service constructor for very easy API wrappers a la HTTParty...
 var Minute = rest.service(function() {}, {
-  baseURL: 'http://7f85ccfb.ngrok.com/'
+  baseURL: 'http://7f85ccfb.ngrok.com'
 }, {
 
     fetchArticles: function(language, originalLanguage) {

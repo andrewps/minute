@@ -1,14 +1,14 @@
 extends ../layout
 
-//- block header
-//-     include ../includes/header
+block header
+    include ../includes/header
 
 block content
     .columns
         .col-8
             .post-head
                 .meta: small Translated: #{moment(article.publish_date).format('MMMM Do YYYY')}
-                h2.headline #{article.title}
+                h1.headline #{article.title}
 
             article
 
@@ -31,5 +31,8 @@ block content
                 else
                     .post-text
                         p #{article.text}
+                    a(href="#{article.article.url}", target="_blank").button.button-cyan.button-icon.button-fluid
+                        label Read original post
+                        .ss-icon.ss-right
                 .fin                    
         .col-4: include ../includes/rightrail

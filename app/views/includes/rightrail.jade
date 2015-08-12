@@ -10,42 +10,6 @@ section.right-rail
                     a(href="#")
                         .ss-social.ss-twitter
                         span Tweet
-            //- .secondary-share
-            //-     span
-            //-         .network.pinterest.tt(title="Share on Pinterest")
-            //-             .tooltip
-            //-                 | Share on Pinterest
-            //-             .ss-social.ss-pinterest
-            //-     span
-            //-         .network.email.tt(title="Email This")
-            //-             .tooltip
-            //-                 | Email This
-            //-             .ss-social.ss-email
-            //-     span
-            //-         .network.whatsapp.tt(title="Share on WhatsApp")
-            //-             .tooltip
-            //-                 | Share on WhatsApp
-            //-             .ss-social.ss-whatsapp
-            //-     span
-            //-         .network.tumblr.tt(title="Share on Tumblr")
-            //-             .tooltip
-            //-                 | Share on Tumblr
-            //-             .ss-social.ss-tumblr
-            //-     span
-            //-         .network.reddit.tt(title="Share on Reddit")
-            //-             .tooltip
-            //-                 | Share on Reddit
-            //-             .ss-social.ss-reddit
-            //-     span
-            //-         .network.digg.tt(title="Digg this")
-            //-             .tooltip
-            //-                 | Digg this
-            //-             .ss-icon.ss-like
-            //-     span
-            //-         .network.googleplus.tt(title="Share on Google+")
-            //-             .tooltip
-            //-                 | Share on Google+
-            //-             .ss-social.ss-googleplus
 
     .mod
         .post-meta
@@ -59,7 +23,7 @@ section.right-rail
                     div 
                         | Language: 
                         a(href="/#{language}/?language=#{article.article.source.language.short_code}") #{article.article.source.language.name}
-                a(href="#{article.article.url}", target="_blank").button.button-cyan.button-icon.button-fluid
+                a(href="#{article.article.url}", target="_blank").button.button-royal.button-icon.button-fluid
                     label Read original post
                     .ss-icon.ss-right
             else
@@ -71,18 +35,17 @@ section.right-rail
                     div 
                         | Language: 
                         a(href="/#{'language'}/?language=#{'article.article.source.language.short_code'}") #{'article.article.source.language.name'}
-                a(href="#{'article.article.url'}", target="_blank").button.button-cyan.button-icon.button-fluid
+                a(href="#{'article.article.url'}", target="_blank").button.button-royal.button-icon.button-fluid
                     label Read original post
                     .ss-icon.ss-right
-    .mod
-        .tags
-            b Read More. 
+    .mod.keywords
+            b Keywords: 
             if article.article
                 each keyword in article.article.keywords
-                    a(href="#") #{keyword}, 
+                    span #{keyword}, 
             else
                 each keyword in ['keyword1', 'keyword2', 'keyword3', 'keyword4']
-                    a(href="#") #{keyword}, 
+                    span #{keyword}, 
     .mod
         .find-mistake
             p 

@@ -8,7 +8,7 @@ article {
   text-transform: uppercase;
   font-family: $titles;
 }
-h1.headline {
+.headline {
   margin: 1rem 0 2.5rem 0;
   &:after {
     content: " ";

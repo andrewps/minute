@@ -96,7 +96,7 @@ section.right-rail {
 .post-meta {    
     width: 100%;
     h4 {
-        color: $cyan;
+        color: $royal;
         margin: 0;
     }
     .origin {
@@ -106,10 +106,22 @@ section.right-rail {
     }
 }
 
-.mod.tags,
+.mod.keywords {
+    line-height: 1.5rem;
+    span {
+        display: inline-block;
+        &:before {
+            display: inline-block;
+            width: .5rem;
+            content: "#";
+            opacity: .5;
+        }
+    }
+}
+
 .mod.mistakes {
     line-height: 1.5rem;
-    a {
+    span, a {
         font-weight: bold;
     }
 }
